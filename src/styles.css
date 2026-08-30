@@ -281,6 +281,10 @@ a {
   align-items: end;
 }
 
+.hero-grid-simple {
+  grid-template-columns: minmax(0, 1fr);
+}
+
 .hero-copy {
   max-width: 690px;
 }
@@ -346,82 +350,6 @@ a {
   color: var(--text);
   background: rgba(255, 255, 255, 0.07);
   backdrop-filter: blur(16px);
-}
-
-.mission-card {
-  border: 1px solid var(--line);
-  background: rgba(6, 13, 17, 0.52);
-  box-shadow: var(--shadow);
-  backdrop-filter: blur(20px);
-  border-radius: 8px;
-  padding: 20px;
-}
-
-.mission-card > span {
-  font-family: var(--font-display);
-  color: var(--gold);
-  font-size: 0.75rem;
-  text-transform: uppercase;
-  letter-spacing: 0.14em;
-  font-weight: 600;
-}
-
-.mission-card strong {
-  display: block;
-  margin-top: 10px;
-  font-family: var(--font-display);
-  font-size: 1.45rem;
-  font-weight: 600;
-}
-
-.mission-map {
-  position: relative;
-  height: 190px;
-  margin: 18px 0;
-  border-radius: 8px;
-  overflow: hidden;
-  border: 1px solid rgba(82, 197, 194, 0.22);
-  background:
-    linear-gradient(rgba(82, 197, 194, 0.1) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(82, 197, 194, 0.1) 1px, transparent 1px),
-    radial-gradient(circle at 50% 50%, rgba(82, 197, 194, 0.2), transparent 48%),
-    #0a1715;
-  background-size: 30px 30px, 30px 30px, 100% 100%, auto;
-}
-
-.mission-map i {
-  position: absolute;
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  background: var(--orange);
-  box-shadow: 0 0 0 10px rgba(250, 129, 47, 0.16);
-}
-
-.mission-map i:nth-child(1) {
-  top: 28%;
-  left: 25%;
-}
-
-.mission-map i:nth-child(2) {
-  top: 57%;
-  left: 62%;
-}
-
-.mission-map i:nth-child(3) {
-  top: 41%;
-  left: 45%;
-  background: var(--teal);
-  box-shadow: 0 0 0 14px rgba(82, 197, 194, 0.12);
-}
-
-.mission-meta {
-  display: flex;
-  justify-content: space-between;
-  font-family: var(--font-display);
-  font-weight: 500;
-  color: var(--muted);
-  font-size: 0.78rem;
 }
 
 .hero-coordinates {
@@ -827,10 +755,6 @@ blockquote span {
     grid-template-columns: 1fr;
   }
 
-  .mission-card {
-    max-width: 430px;
-  }
-
   .course-grid,
   .community-grid,
   .testimonial-grid,
@@ -879,10 +803,6 @@ blockquote span {
 
   .hero-actions {
     margin-top: 26px;
-  }
-
-  .mission-card {
-    display: none;
   }
 
   .hero-actions {

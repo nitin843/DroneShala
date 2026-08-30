@@ -224,7 +224,7 @@ function Hero() {
         <div className="flight-line flight-line-one" />
         <div className="flight-line flight-line-two" />
       </div>
-      <div className="hero-grid">
+      <div className="hero-grid hero-grid-simple">
         <div className="hero-copy" data-reveal>
           <p className="eyebrow">Nepal's integrated drone ecosystem</p>
           <h1>Train, fly, map, and create with Nepal's drone specialists.</h1>
@@ -238,19 +238,6 @@ function Hero() {
             <a className="button button-secondary" href="#services">
               View Services <Play aria-hidden="true" size={17} />
             </a>
-          </div>
-        </div>
-        <div className="mission-card" data-reveal>
-          <span>Active Mission</span>
-          <strong>Kathmandu Flight Lab</strong>
-          <div className="mission-map">
-            <i />
-            <i />
-            <i />
-          </div>
-          <div className="mission-meta">
-            <span>27.7172 N</span>
-            <span>85.3240 E</span>
           </div>
         </div>
       </div>
