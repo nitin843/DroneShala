@@ -7,7 +7,6 @@ import {
   Camera,
   ChevronRight,
   GraduationCap,
-  Map,
   Menu,
   MessageCircle,
   Plane,
@@ -19,6 +18,7 @@ import {
   Wrench,
   X,
 } from "lucide-react";
+import { VariableFontHover } from "@/components/ui/variable-font-hover";
 import "./styles.css";
 
 const navItems = [
@@ -171,7 +171,14 @@ function Header() {
       <nav className="desktop-nav" aria-label="Primary navigation">
         {navItems.map((item) => (
           <a key={item.label} href={item.href}>
-            {item.label}
+            <VariableFontHover
+              className="cursor-pointer text-sm text-muted-foreground transition-colors hover:text-foreground"
+              fromFontVariationSettings="'wght' 500"
+              label={item.label}
+              staggerDuration={0.025}
+              staggerFrom="center"
+              toFontVariationSettings="'wght' 800"
+            />
           </a>
         ))}
       </nav>

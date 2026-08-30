@@ -1,4 +1,9 @@
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap");
+@import "tailwindcss";
+
+@theme {
+  --color-foreground: #f7faf7;
+  --color-muted-foreground: #a9b8b3;
+}
 
 :root {
   color-scheme: dark;
