@@ -110,21 +110,47 @@ a {
   justify-self: center;
   display: flex;
   align-items: center;
-  gap: 6px;
+  gap: 10px;
+  padding: 5px;
+  border: 1px solid rgba(82, 197, 194, 0.16);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.045);
 }
 
 .desktop-nav a {
+  position: relative;
+  overflow: hidden;
   color: rgba(247, 250, 247, 0.76);
   font-size: 0.88rem;
   font-weight: 600;
-  padding: 10px 12px;
+  padding: 10px 15px;
   border-radius: 999px;
-  transition: color 180ms ease, background 180ms ease;
+  transition: color 180ms ease, background 180ms ease, box-shadow 180ms ease, transform 180ms ease;
+}
+
+.desktop-nav a::after {
+  content: "";
+  position: absolute;
+  left: 16px;
+  right: 16px;
+  bottom: 7px;
+  height: 2px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--teal), var(--orange));
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: transform 240ms ease;
 }
 
 .desktop-nav a:hover {
   color: var(--text);
-  background: rgba(255, 255, 255, 0.08);
+  background: rgba(82, 197, 194, 0.12);
+  box-shadow: inset 0 0 0 1px rgba(82, 197, 194, 0.2), 0 10px 28px rgba(82, 197, 194, 0.1);
+  transform: translateY(-1px);
+}
+
+.desktop-nav a:hover::after {
+  transform: scaleX(1);
 }
 
 .nav-cta,
@@ -143,6 +169,12 @@ a {
   color: #07110f;
   background: var(--text);
   font-size: 0.86rem;
+  box-shadow: 0 12px 34px rgba(247, 250, 247, 0.16);
+}
+
+.nav-cta:hover {
+  color: #07110f;
+  background: linear-gradient(135deg, #f7faf7, #ffbf72);
 }
 
 .nav-cta:hover,

@@ -23,10 +23,8 @@ import "./styles.css";
 
 const navItems = [
   { label: "Academy", href: "#academy" },
-  { label: "Services", href: "#services" },
-  { label: "Why Us", href: "#why" },
-  { label: "Community", href: "#community" },
-  { label: "Contact", href: "#contact" },
+  { label: "Shop", href: "#shop" },
+  { label: "Rent", href: "#rent" },
 ];
 
 const courses = [
@@ -52,6 +50,7 @@ const courses = [
 
 const services = [
   {
+    id: "shop",
     title: "Drone Shop",
     text: "Buy drones, accessories, batteries, and mapping tools with practical guidance from drone operators.",
     image: "/media/drone_shop.png",
@@ -59,6 +58,7 @@ const services = [
     cta: "Shop now",
   },
   {
+    id: "rent",
     title: "Drone Rental",
     text: "Rent certified drones with pilots for field operations, content production, and technical work.",
     image: "/media/drone_rental.png",
@@ -66,6 +66,7 @@ const services = [
     cta: "Rent now",
   },
   {
+    id: "repair",
     title: "Repair & Maintenance",
     text: "Expert diagnostics, spare parts, preventive maintenance, and support plans for working drone teams.",
     image: "/media/repair_maintenance.png",
@@ -183,7 +184,14 @@ function Header() {
         ))}
       </nav>
       <a className="nav-cta" href="#contact">
-        Enroll Now <ChevronRight aria-hidden="true" size={16} />
+        <VariableFontHover
+          fromFontVariationSettings="'wght' 600"
+          label="Enroll Now"
+          staggerDuration={0.02}
+          staggerFrom="center"
+          toFontVariationSettings="'wght' 850"
+        />
+        <ChevronRight aria-hidden="true" size={16} />
       </a>
       <button
         className="menu-button"
@@ -309,7 +317,7 @@ function ServicesSection() {
         {services.map((service, index) => {
           const Icon = service.icon;
           return (
-            <article className="service-row" key={service.title} data-reveal>
+            <article className="service-row" id={service.id} key={service.title} data-reveal>
               <span className="service-number">{String(index + 1).padStart(2, "0")}</span>
               <img src={service.image} alt={`${service.title} from DroneShala Nepal`} />
               <div>

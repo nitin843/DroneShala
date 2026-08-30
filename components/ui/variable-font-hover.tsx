@@ -36,6 +36,8 @@ export function VariableFontHover({
     <span
       aria-label={label}
       className={cn("inline-flex items-center whitespace-nowrap", className)}
+      data-hovered={hovered ? "true" : "false"}
+      data-variable-font-hover=""
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
     >
@@ -46,6 +48,7 @@ export function VariableFontHover({
           key={`${letter}-${index}`}
           style={{
             fontVariationSettings: hovered ? toFontVariationSettings : fromFontVariationSettings,
+            transform: hovered ? "translateY(-2px)" : "translateY(0)",
             transitionDelay: `${getDistance(index, letters.length, staggerFrom) * staggerDuration}s`,
           }}
         >
