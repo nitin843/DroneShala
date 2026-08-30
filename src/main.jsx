@@ -18,7 +18,6 @@ import {
   X,
 } from "lucide-react";
 import VariableFontHoverNav from "@/components/ui/m-variable-font-hover-1";
-import { ParallaxComponent } from "@/components/ui/parallax-scrolling";
 import "./styles.css";
 
 const navItems = [
@@ -443,7 +442,6 @@ function App() {
       <main>
         <Hero />
         <TrustBand />
-        <ParallaxComponent />
         <CourseSection />
         <ServicesSection />
         <WhySection />
