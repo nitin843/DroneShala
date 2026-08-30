@@ -220,7 +220,7 @@ function Hero() {
   return (
     <section className="hero" id="home">
       <div className="hero-bg" aria-hidden="true">
-        <img src="/media/hero_drone_mountain.png" alt="" />
+        <img src="/media/hero_white_drone.jpg" alt="" />
         <div className="flight-line flight-line-one" />
         <div className="flight-line flight-line-two" />
       </div>
