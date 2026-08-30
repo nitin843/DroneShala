@@ -1,21 +1,49 @@
 "use client";
+
+import { cn } from "@/lib/utils";
 import { VariableFontHover } from "@/components/ui/variable-font-hover";
 
-const navLinks = ["Academy", "Shop", "Rent", "Enroll Now"];
+type NavLink = {
+  emphasis?: boolean;
+  href: string;
+  label: string;
+};
 
-export default function VariableFontHoverNav() {
+type VariableFontHoverNavProps = {
+  className?: string;
+  links?: NavLink[];
+  onNavigate?: () => void;
+};
+
+const defaultNavLinks: NavLink[] = [
+  { label: "Academy", href: "#academy" },
+  { label: "Shop", href: "#shop" },
+  { label: "Rent", href: "#rent" },
+  { label: "Enroll Now", href: "#contact", emphasis: true },
+];
+
+export default function VariableFontHoverNav({
+  className,
+  links = defaultNavLinks,
+  onNavigate,
+}: VariableFontHoverNavProps) {
   return (
-    <nav className="flex min-h-50 flex-wrap items-center justify-center gap-8 px-6">
-      {navLinks.map((link) => (
-        <VariableFontHover
-          className="cursor-pointer text-base text-muted-foreground transition-colors hover:text-foreground"
-          fromFontVariationSettings="'wght' 400"
-          key={link}
-          label={link}
-          staggerDuration={0.03}
-          staggerFrom="center"
-          toFontVariationSettings="'wght' 700"
-        />
+    <nav className={cn("site-variable-nav", className)} aria-label="Primary navigation">
+      {links.map((link) => (
+        <a
+          className={cn("site-variable-nav__link", link.emphasis && "is-emphasis")}
+          href={link.href}
+          key={link.label}
+          onClick={onNavigate}
+        >
+          <VariableFontHover
+            fromFontVariationSettings="'wght' 500"
+            label={link.label}
+            staggerDuration={0.025}
+            staggerFrom="center"
+            toFontVariationSettings="'wght' 780"
+          />
+        </a>
       ))}
     </nav>
   );

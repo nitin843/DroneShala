@@ -5,7 +5,6 @@ import {
   BadgeCheck,
   BookOpen,
   Camera,
-  ChevronRight,
   GraduationCap,
   Menu,
   MessageCircle,
@@ -18,13 +17,14 @@ import {
   Wrench,
   X,
 } from "lucide-react";
-import { VariableFontHover } from "@/components/ui/variable-font-hover";
+import VariableFontHoverNav from "@/components/ui/m-variable-font-hover-1";
 import "./styles.css";
 
 const navItems = [
   { label: "Academy", href: "#academy" },
   { label: "Shop", href: "#shop" },
   { label: "Rent", href: "#rent" },
+  { label: "Enroll Now", href: "#contact", emphasis: true },
 ];
 
 const courses = [
@@ -169,30 +169,7 @@ function Header() {
       <a className="brand" href="#home" aria-label="DroneShala Nepal home">
         <img src="/media/logo.png" alt="DroneShala Nepal" />
       </a>
-      <nav className="desktop-nav" aria-label="Primary navigation">
-        {navItems.map((item) => (
-          <a key={item.label} href={item.href}>
-            <VariableFontHover
-              className="cursor-pointer text-sm text-muted-foreground transition-colors hover:text-foreground"
-              fromFontVariationSettings="'wght' 500"
-              label={item.label}
-              staggerDuration={0.025}
-              staggerFrom="center"
-              toFontVariationSettings="'wght' 800"
-            />
-          </a>
-        ))}
-      </nav>
-      <a className="nav-cta" href="#contact">
-        <VariableFontHover
-          fromFontVariationSettings="'wght' 600"
-          label="Enroll Now"
-          staggerDuration={0.02}
-          staggerFrom="center"
-          toFontVariationSettings="'wght' 850"
-        />
-        <ChevronRight aria-hidden="true" size={16} />
-      </a>
+      <VariableFontHoverNav links={navItems} />
       <button
         className="menu-button"
         type="button"
@@ -204,13 +181,15 @@ function Header() {
       </button>
       <div className={`mobile-panel ${open ? "is-open" : ""}`} aria-hidden={!open}>
         {navItems.map((item) => (
-          <a key={item.label} href={item.href} onClick={() => setOpen(false)}>
+          <a
+            className={item.emphasis ? "is-emphasis" : undefined}
+            key={item.label}
+            href={item.href}
+            onClick={() => setOpen(false)}
+          >
             {item.label}
           </a>
         ))}
-        <a href="#contact" onClick={() => setOpen(false)}>
-          Enroll Now
-        </a>
       </div>
     </header>
   );
