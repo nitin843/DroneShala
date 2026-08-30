@@ -3,6 +3,8 @@
 @theme {
   --color-foreground: #f7faf7;
   --color-muted-foreground: #a9b8b3;
+  --font-sans: Inter, system-ui, sans-serif;
+  --font-display: "Space Grotesk", Inter, system-ui, sans-serif;
 }
 
 :root {
@@ -17,6 +19,8 @@
   --teal: #52c5c2;
   --orange: #fa812f;
   --gold: #d6b15f;
+  --font-sans: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-display: "Space Grotesk", Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   --shadow: 0 30px 90px rgba(0, 0, 0, 0.45);
   --max: 1180px;
 }
@@ -31,7 +35,8 @@ html {
 
 body {
   margin: 0;
-  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-family: var(--font-sans);
+  font-weight: 400;
   background:
     radial-gradient(circle at 12% 8%, rgba(82, 197, 194, 0.18), transparent 29rem),
     radial-gradient(circle at 86% 4%, rgba(250, 129, 47, 0.16), transparent 28rem),
@@ -122,7 +127,7 @@ a {
   overflow: hidden;
   color: rgba(247, 250, 247, 0.76);
   font-size: 0.88rem;
-  font-weight: 600;
+  font-weight: 500;
   padding: 10px 15px;
   border-radius: 999px;
   transition: color 180ms ease, background 180ms ease, box-shadow 180ms ease, transform 180ms ease;
@@ -160,7 +165,8 @@ a {
   justify-content: center;
   gap: 9px;
   border-radius: 999px;
-  font-weight: 800;
+  font-family: var(--font-sans);
+  font-weight: 600;
   transition: transform 180ms ease, box-shadow 180ms ease, background 180ms ease;
 }
 
@@ -169,6 +175,7 @@ a {
   color: #07110f;
   background: var(--text);
   font-size: 0.86rem;
+  letter-spacing: 0;
   box-shadow: 0 12px 34px rgba(247, 250, 247, 0.16);
 }
 
@@ -271,18 +278,21 @@ a {
 .eyebrow,
 .section-index,
 .card-kicker {
+  font-family: var(--font-display);
   color: var(--teal);
   text-transform: uppercase;
   letter-spacing: 0.12em;
   font-size: 0.74rem;
-  font-weight: 800;
+  font-weight: 600;
 }
 
 .hero h1 {
   margin: 18px 0 24px;
   max-width: 880px;
+  font-family: var(--font-display);
   font-size: clamp(3.45rem, 8.4vw, 7.6rem);
-  line-height: 0.92;
+  font-weight: 700;
+  line-height: 0.94;
   letter-spacing: 0;
 }
 
@@ -335,17 +345,20 @@ a {
 }
 
 .mission-card > span {
+  font-family: var(--font-display);
   color: var(--gold);
   font-size: 0.75rem;
   text-transform: uppercase;
   letter-spacing: 0.14em;
-  font-weight: 800;
+  font-weight: 600;
 }
 
 .mission-card strong {
   display: block;
   margin-top: 10px;
+  font-family: var(--font-display);
   font-size: 1.45rem;
+  font-weight: 600;
 }
 
 .mission-map {
@@ -392,6 +405,8 @@ a {
 .mission-meta {
   display: flex;
   justify-content: space-between;
+  font-family: var(--font-display);
+  font-weight: 500;
   color: var(--muted);
   font-size: 0.78rem;
 }
@@ -404,6 +419,8 @@ a {
   bottom: 22px;
   display: flex;
   justify-content: space-between;
+  font-family: var(--font-display);
+  font-weight: 500;
   color: rgba(247, 250, 247, 0.42);
   font-size: 0.76rem;
   letter-spacing: 0.12em;
@@ -426,7 +443,7 @@ a {
   color: rgba(247, 250, 247, 0.72);
   text-align: center;
   border-right: 1px solid var(--line);
-  font-weight: 700;
+  font-weight: 500;
 }
 
 .trust-band span:last-child {
@@ -466,7 +483,9 @@ a {
 .why h2,
 .final-cta h2 {
   margin: 12px 0 0;
+  font-family: var(--font-display);
   font-size: clamp(2.15rem, 5vw, 4.9rem);
+  font-weight: 600;
   line-height: 0.98;
   letter-spacing: 0;
 }
@@ -524,7 +543,9 @@ blockquote {
 .reason-card h3,
 .community-card h3 {
   margin: 14px 0 10px;
+  font-family: var(--font-display);
   font-size: 1.35rem;
+  font-weight: 600;
 }
 
 .course-card p,
@@ -542,7 +563,7 @@ blockquote p,
   display: inline-flex;
   margin-top: 14px;
   color: var(--orange);
-  font-weight: 800;
+  font-weight: 600;
 }
 
 .service-stack {
@@ -561,8 +582,9 @@ blockquote p,
 }
 
 .service-number {
+  font-family: var(--font-display);
   color: rgba(247, 250, 247, 0.35);
-  font-weight: 800;
+  font-weight: 600;
 }
 
 .service-row img {
@@ -581,7 +603,7 @@ blockquote p,
   align-items: center;
   gap: 8px;
   color: var(--text);
-  font-weight: 800;
+  font-weight: 600;
 }
 
 .why {
@@ -688,10 +710,12 @@ blockquote span {
 
 .footer h3 {
   margin: 0 0 14px;
+  font-family: var(--font-display);
   font-size: 0.92rem;
   text-transform: uppercase;
   letter-spacing: 0.12em;
   color: var(--text);
+  font-weight: 600;
 }
 
 .footer a {
@@ -766,7 +790,7 @@ blockquote span {
     padding: 14px;
     border-radius: 8px;
     color: var(--text);
-    font-weight: 800;
+    font-weight: 600;
   }
 
   .mobile-panel a:hover {
