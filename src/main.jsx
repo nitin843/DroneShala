@@ -441,13 +441,15 @@ function App() {
       <Header />
       <main>
         <Hero />
-        <TrustBand />
-        <CourseSection />
-        <ServicesSection />
-        <WhySection />
-        <CommunitySection />
-        <Testimonials />
-        <FinalCta />
+        <div className="below-hero-bg">
+          <TrustBand />
+          <CourseSection />
+          <ServicesSection />
+          <WhySection />
+          <CommunitySection />
+          <Testimonials />
+          <FinalCta />
+        </div>
       </main>
       <Footer />
     </>

@@ -21,6 +21,7 @@
   --gold: #b86b22;
   --font-sans: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   --font-display: "Space Grotesk", Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --section-sky-bg: url("/media/section_sky_background.png");
   --shadow: 0 24px 70px rgba(17, 24, 39, 0.12);
   --max: 1180px;
 }
@@ -387,12 +388,21 @@ a {
   text-transform: uppercase;
 }
 
+.below-hero-bg {
+  position: relative;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.78) 0%, rgba(255, 255, 255, 0.64) 34%, rgba(255, 247, 241, 0.68) 64%, #ffffff 100%),
+    var(--section-sky-bg) center top / 100% clamp(760px, 78vw, 1180px) repeat-y,
+    #ffffff;
+}
+
 .trust-band {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   border-top: 1px solid var(--line);
   border-bottom: 1px solid var(--line);
-  background: #ffffff;
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(12px);
 }
 
 .trust-band span {
@@ -422,8 +432,7 @@ a {
   padding-left: max(24px, calc((100vw - var(--max)) / 2 + 24px));
   padding-right: max(24px, calc((100vw - var(--max)) / 2 + 24px));
   background:
-    linear-gradient(180deg, #ffffff, #fff7f1),
-    #ffffff;
+    linear-gradient(180deg, rgba(255, 255, 255, 0.76), rgba(255, 247, 241, 0.78));
 }
 
 .section-head {
@@ -466,8 +475,9 @@ a {
 blockquote {
   border: 1px solid var(--line);
   border-radius: 8px;
-  background: var(--panel);
+  background: rgba(255, 255, 255, 0.86);
   box-shadow: 0 20px 60px rgba(17, 24, 39, 0.08);
+  backdrop-filter: blur(14px);
 }
 
 .course-card {
@@ -644,10 +654,11 @@ blockquote span {
   border: 1px solid rgba(240, 124, 46, 0.24);
   border-radius: 8px;
   background:
-    linear-gradient(135deg, rgba(240, 124, 46, 0.16), rgba(255, 255, 255, 0.88)),
-    url("/media/hero_white_drone.jpg") right center / min(46vw, 680px) auto no-repeat,
+    linear-gradient(135deg, rgba(240, 124, 46, 0.2), rgba(255, 255, 255, 0.82)),
+    var(--section-sky-bg) center / cover no-repeat,
     #ffffff;
   box-shadow: var(--shadow);
+  backdrop-filter: blur(10px);
 }
 
 .final-cta h2 {
@@ -882,6 +893,7 @@ blockquote span {
     width: calc(100% - 36px);
     background:
       linear-gradient(135deg, rgba(240, 124, 46, 0.18), rgba(255, 255, 255, 0.92)),
+      var(--section-sky-bg) center / cover no-repeat,
       #ffffff;
   }
 }
