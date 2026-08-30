@@ -224,19 +224,29 @@ a {
   position: absolute;
   inset: 0;
   background:
-    linear-gradient(90deg, rgba(7, 17, 15, 0.94), rgba(7, 17, 15, 0.62) 46%, rgba(7, 17, 15, 0.28)),
-    linear-gradient(180deg, rgba(7, 17, 15, 0.2), rgba(7, 17, 15, 0.98));
+    linear-gradient(90deg, rgba(4, 9, 12, 0.86), rgba(4, 9, 12, 0.54) 43%, rgba(4, 9, 12, 0.2) 72%),
+    linear-gradient(180deg, rgba(4, 9, 12, 0.42), rgba(4, 9, 12, 0.12) 42%, rgba(7, 17, 15, 0.98));
   z-index: 1;
+}
+
+.hero-bg::after {
+  content: "";
+  position: absolute;
+  inset: auto 0 0;
+  z-index: 1;
+  height: 34%;
+  background: linear-gradient(180deg, transparent, rgba(7, 17, 15, 0.98));
 }
 
 .hero-bg img {
   position: absolute;
-  right: -7vw;
-  bottom: 1vh;
-  width: min(62vw, 980px);
-  opacity: 0.72;
-  filter: drop-shadow(0 34px 80px rgba(82, 197, 194, 0.18));
-  animation: floatDrone 8s ease-in-out infinite;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  opacity: 0.96;
+  filter: saturate(1.08) contrast(1.05);
 }
 
 .flight-line {
@@ -337,7 +347,7 @@ a {
 
 .mission-card {
   border: 1px solid var(--line);
-  background: rgba(9, 20, 18, 0.65);
+  background: rgba(6, 13, 17, 0.52);
   box-shadow: var(--shadow);
   backdrop-filter: blur(20px);
   border-radius: 8px;
@@ -803,10 +813,8 @@ blockquote span {
   }
 
   .hero-bg img {
-    width: min(92vw, 700px);
-    right: -18vw;
-    bottom: 8vh;
-    opacity: 0.36;
+    object-position: 58% center;
+    opacity: 0.72;
   }
 
   .hero-grid,
